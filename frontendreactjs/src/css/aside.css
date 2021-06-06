@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --color-base-primary: #1e1e1e;
+    --color-base-secondary: #3c3c3c;
+    --color-base-text-primary: #a0a0a0;
+    --color-base-text-secondary: #868686;
+    --color-logo: white;
+    --color-button: #c41734;
+    --color-button2: #df3030;
+}
+
+aside {
+    width: 250px;
+    height: 100%;
+    border-right: 1px solid var(--color-base-secondary);
+    padding: 20px 35px 0px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo-conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    color: var(--color-logo);
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: default;
+}
+
+.content-conteiner ul{
+    font-weight: 600;
+    list-style: none; 
+}
+
+.content-conteiner ul li{
+    margin-top: 5px;
+}
+
+.li-disabled, .li-active {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.li-disabled {
+    color: var(--color-base-text-secondary);
+    cursor: default;
+}
+
+.li-active{
+    color: var(--color-base-text-primary);
+    border-radius: 10px;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.li-active:hover{
+    background-image: linear-gradient(var(--color-button), var(--color-button2));
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.fas, .far {
+    margin-right: 15px;
+    font-size: 1.3rem;
+}
+
+.fa-chart-line {
+    transform: scaleY(-1);
+    color: var(--color-base-shadow);
+    background-image: linear-gradient(var(--color-button), var(--color-button2));
+    border-radius: 50%;
+    padding: 4px;
+    box-shadow: 1px 1px 4px 0px var(--color-base-shadow);
+}
+
+.li-line {
+    border-bottom: 1px solid var(--color-base-secondary);
+}
+
+.copyright-conteiner {
+    background-color: var(--color-base-primary);
+}
+
+.copyright-conteiner ul {
+    font-weight: 600;
+    list-style: none; 
+}
+
+.copyright-conteiner ul li{
+    margin-top: 5px;
+}
+
+.li-copyright {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.fa-cog, .fa-user {
+    color: var(--color-base-shadow);
+    background-image: linear-gradient(var(--color-button), var(--color-button2));
+    border-radius: 50%;
+    padding: 4px;
+    box-shadow: 1px 1px 4px 0px var(--color-base-shadow);
+}
