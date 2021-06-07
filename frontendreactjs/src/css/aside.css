@@ -5,6 +5,7 @@
     --color-base-secondary: #3c3c3c;
     --color-base-text-primary: #a0a0a0;
     --color-base-text-secondary: #868686;
+    --color-header-text-transp: #e9e9e9cc;
     --color-logo: white;
     --color-button: #c41734;
     --color-button2: #df3030;
@@ -52,7 +53,8 @@ aside {
 }
 
 .li-active{
-    color: var(--color-base-text-primary);
+    color: var(--color-header-text-transp);
+    text-shadow: 1px 1px 3px var(--color-base-shadow);
     border-radius: 10px;
     padding-left: 15px;
     transition: all 0.3s ease;
@@ -68,6 +70,7 @@ aside {
 .fas, .far {
     margin-right: 15px;
     font-size: 1.3rem;
+    text-shadow: none;
 }
 
 .fa-chart-line {

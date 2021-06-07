@@ -1,13 +1,18 @@
-import React from 'react';
 import Expenses from './components/Expenses';
+import AddExpense from './components/AddExpense';
+import EditExpense from './components/EditExpense';
 
 import './css/global.css'
 import './css/aside.css'
 import './css/main.css'
 
+
 function App() {
+
   return (
     <>
+    <div id="root-addExpense"><AddExpense /></div>
+    <div id="root-EditExpense"><EditExpense /></div>
     <aside>
       <div>
         <div className="logo-conteiner">

@@ -1,9 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ExpenseCards from './ExpenseCards';
+import api from '../services/api';
 
 import '../css/css components/expenses.css';
 
 function Expenses() {
+
+    const [allExpenses, setAllExpenses] = useState([])
+
+    useEffect(() => {
+      async function getAllExpenses() {
+        const response = await api.get("/expenses",);
+    
+        setAllExpenses(response.data);
+    
+      }
+  
+      getAllExpenses();
+    }, [])
+
+    function openAddExpense() {
+        document.getElementById('root-addExpense').style.display = 'block';
+    }
+
     return (
         <>
             <header className="header">
@@ -49,7 +68,7 @@ function Expenses() {
                         <div className="create-expense">
                             <i className="fas fa-search" id="search-content"></i>
                             <input type="search" name="search" id="content-search" placeholder="Pesquisar Conta"/>
-                            <div className="mini-cards"><p><i className="fas fa-plus" id="content-plus"></i>Adicionar nova despesa</p></div>
+                            <div className="mini-cards" onClick={()=> openAddExpense()}><p><i className="fas fa-plus" id="content-plus"></i>Adicionar nova despesa</p></div>
                         </div>
                         <div className="mini-cards-conteiner">
                             <div className="mini-cards"><p>Vence hoje</p></div>
@@ -59,14 +78,16 @@ function Expenses() {
                             <div className="mini-cards"><p>Todos</p></div>
                         </div>
                     </div>
-                    <ExpenseCards/>
-                    <ExpenseCards/>
+                    {allExpenses.map( data => (
+                        <ExpenseCards data={data}/>
+                    ))}
+                    
                 </div>
                 <div className="right-aside">
                     <div className="card-right-aside"></div>
                 </div>
             </div>
-            
+
         </>
     );
 }
