@@ -8,7 +8,7 @@ function AddExpense () {
 
     const [expenseName, setExpenseName] = useState('');
     const [obs, setObs] = useState('');
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState('0000');
     const [dueDate, setDueDate] = useState('');
     const [datePayment, setDatePayment] = useState('');
 
@@ -35,6 +35,29 @@ function AddExpense () {
         document.getElementById('root-addExpense').style.display = 'none';
     }
 
+    function formatarMoeda(eValue) {
+        var elemento = document.getElementById('value-input');
+        var valor = eValue;
+
+        valor = valor + '';
+        valor = parseInt(valor.replace(/[\D]+/g, ''));
+        valor = valor + '';
+        valor = valor.replace(/([0-9]{2})$/g, ",$1");
+
+        if (valor.length > 6) {
+            valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+        }
+
+        if (valor.indexOf(',') === 0) {
+            valor.replace(/,/g, ".");
+            valor = '00' + valor
+            console.log(valor)
+        }
+        console.log(parseFloat(valor))
+        setValue(parseFloat(valor))
+        if(valor === 'NaN') setValue('0000');
+    }
+
 
     return (
         <>
@@ -53,7 +76,7 @@ function AddExpense () {
                         <p>Valor:</p>
                     </div>
                     <div className="value" id="value-div"> 
-                        <div id="rs"><span>R$ </span></div><input type="number" min="0" max="9999999" step="0.01" lang="pt-BR" placeholder="00,00" id="value-input" name="value" value={value} onChange= {e => setValue(e.target.value)} required/>
+                        <div id="rs"><span>R$ </span></div><input type="number" min="0" max="9999999" step="0.01" lang="pt-BR" placeholder="00,00" id="value-input" name="value" value={value} onChange= {e => formatarMoeda(e.target.value)} required/>
                     </div>
                     <div className="value-name">
                         <p>Data de Vencimento:</p>

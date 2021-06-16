@@ -1,5 +1,12 @@
+:root {
+    --color-base-shadow: #141414;
+}
+
 main {
     height: 100vh;
     min-width: calc(100vw - 250px);
     padding: 25px;
+    background-color: var(--color-base-shadow);
+    display: flex;
+    flex-direction: column;
 }

@@ -3,8 +3,9 @@ const Expenses = require('../models/ExpensesData');
 module.exports = {
 
     async read(req, res) {
+        // console.log('1')
         const expenseList = await Expenses.find();
-
+        // console.log('2')
         return res.json(expenseList);
     },
 
