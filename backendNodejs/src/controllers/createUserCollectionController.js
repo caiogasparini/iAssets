@@ -6,7 +6,7 @@ module.exports = {
         let { userId } = req.params;
         let newCollection = mongoose.model(userId, newUserSchema)
             //const userIdString = Number.prototype.toString(userId);
-        console.log(newCollection);
+        //console.log(newCollection);
         const collectionCreated = await newCollection.createCollection();
         console.log('collection created');
     }

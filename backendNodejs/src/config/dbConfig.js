@@ -1,10 +1,15 @@
 const mongoose = require('mongoose');
+const ExpensesDataSchema = require('../models/ExpensesData');
+require('dotenv').config();
 
-const dbConfig = 'mongodb+srv://caiogasparini:K@ka47425022@cluster0.anc85.mongodb.net/expenses?retryWrites=true&w=majority';
+const dbConfig = process.env.DB;
 
-const connection = mongoose.connect(dbConfig, {
+const exConn = mongoose.createConnection(dbConfig, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
-module.exports = connection;
+exConn.model('Expenses', ExpensesDataSchema);
+//console.log(mongoose.connection);
+
+module.exports = exConn;

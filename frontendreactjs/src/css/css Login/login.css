@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --color-base-shadow: #141414;
+    --color-base-shadow-transp: #14141483;
+    --color-base-primary: #1e1e1e;
+    --color-base-secondary: #3c3c3c;
+    --color-base-text-primary: #a0a0a0;
+    --color-base-text-secondary: #868686;
+    --color-logo: white;
+    --color-header-text: #e9e9e9;
+    --color-header-text-transp: #e9e9e9cc;
+    --color-button: #c41734;
+    --color-button2: #df3030;
+    --color-base-card-top: #c41734;
+    --color-base-input: #ffffff25;
+}
+
+.main-login {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-login {
+    height: 500px;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to left, var(--color-base-primary)50%,var(--color-button2)50%);
+    box-shadow: 0px 0px 15px 1px black;
+}
+
+.aside-login {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-login {
+    width: 50%;
+    padding: 20px;
+}
+
+.form-login h1 {
+    text-align: center;
+    color: var(--color-button2);
+}
+
+.form-login label {
+    color: var(--color-base-text-primary);
+}
+
+.form-login #inputEmail, .form-login #inputPassword {
+    border: 1px solid var(--color-header-text);
+    background-color: var(--color-base-input);
+    color: var(--color-base-shadow);
+    font-weight: bold;
+}
+
+.form-login #inputEmail:hover, .form-login #inputPassword:hover {
+    background-color: var(--color-base-shadow);
+    border: 1px solid var(--color-button2);
+    color: var(--color-base-text-primary);
+    font-weight: bold;
+}
+
+.form-login #inputEmail:focus, .form-login #inputPassword:focus {
+    background-color: var(--color-base-shadow) !important;
+    border: 1px solid var(--color-button2) !important;
+    color: var(--color-base-text-primary) !important;
+    font-weight: bold !important;
+}
+
+.div-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-button label {
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.div-button label:hover {
+    letter-spacing: 1.5px;
+    color: var(--color-button2); 
+}
+
+.btn-orange {
+    border-color: var(--color-button2);
+    background-color: var(--color-button2);
+    color: var(--color-header-text);
+    width: 50%;
+    transition:all .3s ease-in-out;
+}
+
+.btn-orange:hover {
+    border-color: #df3030b2 !important;
+    background-color: #df3030b2;
+    color: #e9e9e9c7;
+    width: 100%;
+}
+
+.header-aside-login {
+    width: 100%;
+    height: 40%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.txt {
+    color: var(--color-header-text);
+}
+
+.content-aside-login {
+    width: 70%;
+    color: var(--color-header-text-transp);
+}
+
+.form-check-label {
+    cursor: pointer;
+    transition:all .3s ease-in-out;
+}
+
+.form-check-label:hover {
+    color: var(--color-button2);
+}

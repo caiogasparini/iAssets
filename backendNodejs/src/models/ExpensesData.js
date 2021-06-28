@@ -8,4 +8,4 @@ const ExpensesDataSchema = new mongoose.Schema({
     datePayment: Date,
 });
 
-module.exports = mongoose.model('Expenses', ExpensesDataSchema);
+module.exports = ExpensesDataSchema;

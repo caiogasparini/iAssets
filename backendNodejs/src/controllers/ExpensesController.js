@@ -1,10 +1,13 @@
 const Expenses = require('../models/ExpensesData');
 
+const exConn = require('../config/dbConfig');
+const authConn = require('../config/userDbConfig');
+
 module.exports = {
 
     async read(req, res) {
         // console.log('1')
-        const expenseList = await Expenses.find();
+        const expenseList = await exConn.model('Expenses').find();
         // console.log('2')
         return res.json(expenseList);
     },
@@ -17,7 +20,7 @@ module.exports = {
             return res.status(400).json({ error: "Nome da conta, valor e data de vencimento precisam estar preenchidos!" });
         }
 
-        const expenseCreated = await Expenses.create({
+        const expenseCreated = await exConn.model('Expenses').create({
             expenseName,
             value,
             dueDate,
@@ -31,7 +34,7 @@ module.exports = {
     async delete(req, res) {
         const { id } = req.params;
 
-        const expenseDeleted = await Expenses.findOneAndDelete({ _id: id });
+        const expenseDeleted = await exConn.model('Expenses').findOneAndDelete({ _id: id });
 
         if (expenseDeleted) {
             return res.json(expenseDeleted);
@@ -51,7 +54,7 @@ module.exports = {
             return res.status(400).json({ error: "Nome da conta, valor e data de vencimento precisam estar preenchidos!" });
         }
 
-        const expense = await Expenses.findOne({ _id: id });
+        const expense = await exConn.model('Expenses').findOne({ _id: id });
 
         if (expense.expenseName != expenseName || expense.value != value || expense.dueDate != dueDate || expense.obs != obs || expense.datePayment != datePayment) {
             if (expense.expenseName != expenseName) {
